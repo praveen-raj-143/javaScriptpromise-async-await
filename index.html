@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Promises Async Await</h1>
+    <ol>
+        <li>
+            <h2>Write one example explaining how you can write a callback function ?</h2>
+            <h3>CODE :</h3>
+            <pre>
+                function count(a,b){
+                    return a*b-1;
+                }
+                function profile(name, count){
+                    console.log(`${name},${count}`)
+                }
+                profile("krishna",count(12,12))
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                krishna,143
+            </pre>
+        </li>
+        <li>
+            <h2>"Write callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec , 2 should be printed after 2 sec, 3 should be printed after 3 sec and so on. 
+
+                Explain callback hell.
+                Numbers
+                1
+                2
+                3
+                4
+                5
+                6
+                7"</h2>
+            <h3>CODE :</h3>
+            <pre>
+                setTimeout(function(){
+                    console.log("1");
+                    setTimeout(function(){
+                        console.log("2");
+                        setTimeout(function(){
+                            console.log("3");
+                            setTimeout(function(){
+                                console.log("4");
+                                setTimeout(function(){
+                                    console.log("5");
+                                    setTimeout(function(){
+                                        console.log("6");
+                                        setTimeout(function(){
+                                            console.log("7");
+                                        },7000);
+                                    },6000);
+                                },5000);
+                            },4000);
+                        },3000);
+                    },2000);
+                },1000);
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                after 1sec 1 
+                after 2sec 2
+                after 3sec 3
+                after 4sec 4
+                after 5sec 5
+                after 6sec 6
+                after 7sec 7
+            </pre>
+        </li>
+        <li>
+            <h2>"Write promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec , 2 should be printed after 2 sec, 3 should be printed after 3 sec and so on. 
+
+                Numbers
+                1
+                2
+                3
+                4
+                5
+                6
+                7"</h2>
+            <h3>CODE :</h3>
+            <pre>
+                let mypromise = new Promise(function(resolve, reject){
+                    setTimeout(function(){
+                        console.log("1");
+                        setTimeout(function(){
+                            console.log("2");
+                            setTimeout(function(){
+                                console.log("3");
+                                setTimeout(function(){
+                                    console.log("4");
+                                    setTimeout(function(){
+                                        console.log("5");
+                                        setTimeout(function(){
+                                            console.log("6");
+                                            setTimeout(function(){
+                                                console.log("7");
+                                            },7000);
+                                        },6000);
+                                    },5000);
+                                },4000);
+                            },3000);
+                        },2000);
+                    },1000);
+                        
+                    })
+                    mypromise.then(function x(){
+                        console.log(x);
+                    }).catch(function x(){
+                        console.log(x);
+                    })
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                after 1sec 1 
+                after 2sec 2
+                after 3sec 3
+                after 4sec 4
+                after 5sec 5
+                after 6sec 6
+                after 7sec 7
+            </pre>
+        </li>
+        <li>
+            <h2>Create a promise function accepting a argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed then it should go to reject state and catch the error and print Promise Rejected </h2>
+            <h3>CODE :</h3>
+            <pre>
+                let myPromise = new Promise(function(resolve,reject){
+                    let check="";
+                    if(check=="yes") {
+                        resolve(" Promise Resolved");
+                    }else{
+                        reject("Promise Rejected")
+                    }
+                });
+                myPromise.then(function(data){
+                    console.log(data);
+                  }).catch(function(err){
+                    console.log("Error",err);
+                  });
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                Error Promise Rejected
+            </pre>
+        </li>
+        <li>
+            <h2>Create examples to explain callback function</h2>
+            <h3>CODE :</h3>
+            <pre>
+                function count(a,b){
+                    return a*b-1;
+                }
+                function profile(name, count){
+                    console.log(`${name},${count}`)
+                }
+                profile("krishna",count(12,12))
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                krishna,143
+            </pre>
+        </li>
+        <li>
+            <h2>Create examples to explain callback hell function</h2>
+            <h3>CODE :</h3>
+            <pre>
+                setTimeout(function(){
+                    console.log("1");
+                    setTimeout(function(){
+                        console.log("2");
+                        setTimeout(function(){
+                            console.log("3");
+                            setTimeout(function(){
+                                console.log("4");
+                                setTimeout(function(){
+                                    console.log("5");
+                                    setTimeout(function(){
+                                        console.log("6");
+                                        setTimeout(function(){
+                                            console.log("7");
+                                        },7000);
+                                    },6000);
+                                },5000);
+                            },4000);
+                        },3000);
+                    },2000);
+                },1000);
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                after 1sec 1 
+                after 2sec 2
+                after 3sec 3
+                after 4sec 4
+                after 5sec 5
+                after 6sec 6
+                after 7sec 7
+            </pre>
+        </li>
+        <li>
+            <h2>Create examples to explain promises function</h2>
+            <h3>CODE :</h3>
+            <pre>
+                let myPromise = new Promise(function(resolve,reject){
+                    let check="";
+                    if(check=="yes") {
+                        resolve(" Promise Resolved");
+                    }else{
+                        reject("Promise Rejected")
+                    }
+                });
+                myPromise.then(function(data){
+                    console.log(data);
+                  }).catch(function(err){
+                    console.log("Error",err);
+                  });
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                Error Promise Rejected
+            </pre>
+        </li>
+        <li>
+            <h2>Create examples to explain async await function</h2>
+            <h3>CODE :</h3>
+            <pre>
+                function check(N){
+                    let mypromise = new Promise(function (resolve,reject){
+                        if(N%2==0){
+                        resolve("its even")
+                        }else{
+                            reject("its odd")
+                        }
+                    })
+                    return mypromise
+                  }
+                
+                  async function data(){
+                
+                    let num= await check(4);
+                    console.log(num)
+                  }
+                  data()
+                
+                  async function errdata(){
+                
+                    try{
+                        let num= await check(7);
+                        console.log(num)
+                    }catch(err){
+                        console.log(err)
+                    }
+                    
+                  }
+                  errdata()
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                its even
+                its odd
+            </pre>
+        </li>
+        <li>
+            <h2>Create examples to explain promise.all function</h2>
+            <h3>CODE :</h3>
+            <pre>
+
+            </pre>
+            <h3>OUTPUT :</h3>
+            <pre>
+                
+            </pre>
+        </li>
+    </ol>
+    <script src="index.js"></script>
+</body>
+</html>
